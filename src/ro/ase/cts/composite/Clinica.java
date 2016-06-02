@@ -28,6 +28,22 @@ public class Clinica implements IClinica{
 	      this.denumire=denumire;
 	}
 
+	public String getDenumire() {
+		return denumire;
+	}
+
+	public void setDenumire(String denumire) {
+		this.denumire = denumire;
+	}
+
+	public String getAdresa() {
+		return adresa;
+	}
+
+	public void setAdresa(String adresa) {
+		this.adresa = adresa;
+	}
+
 	public void adaugaPacient(Pacient pacient){
 		listaPacienti.add(pacient);
 	}
@@ -50,6 +66,17 @@ public class Clinica implements IClinica{
 	
 	public ArrayList<Medic> getMedici(){
 		return listaMedici;
+	}
+	
+	public boolean verificaNumarPacienti(){
+		int numarPacienti=0;
+		for(int i=0;i<listaPacienti.size();i++){
+			numarPacienti++;
+		}
+		if(numarPacienti<4){
+			return true;
+		}
+		return false;
 	}
 
 	@Override

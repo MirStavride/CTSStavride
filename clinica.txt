@@ -1,0 +1,1 @@
+Clinica [listaPacienti=[Pacient [cod=1, nume=Stavride Miruna, adresa=Bucuresti, CNP=2940319440029, email=null, sex=null], Pacient [cod=2, nume=Stanciu Ionica, adresa=Slobozia, CNP=null, email=ionicastanciu@gmail.com, sex=F]], listaMedici=[Medic [cod=101, nume=Simionescu Olga, adresa=Caracal, salariu=2500.0], Medic [cod=102, nume=Santimbreanu Mircea, adresa=null, salariu=0.0]]]

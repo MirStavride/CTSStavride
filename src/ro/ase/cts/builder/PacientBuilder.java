@@ -25,8 +25,8 @@ public class PacientBuilder implements IPacient{
 		return this;
 	}
 	
-	public PacientBuilder varsta(int varsta){
-		pacient.setVarsta(varsta);
+	public PacientBuilder CNP(String CNP){
+		pacient.setCNP(CNP);
 		return this;
 	}
 	

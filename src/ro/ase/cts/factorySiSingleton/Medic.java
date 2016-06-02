@@ -5,7 +5,9 @@ public class Medic implements IPersoana{
 	int cod;
 	String nume;
 	String adresa;
+	String tip;
 	float salariu;
+	int aniVechime;
 	
 	public Medic(){
 		
@@ -35,12 +37,50 @@ public class Medic implements IPersoana{
 		this.adresa = adresa;
 	}
 
-	public float getSalariu() {
-		return salariu;
+//	public float getSalariu() {
+//		return salariu;
+//	}
+	
+	public String getTip() {
+		return tip;
 	}
 
-	public void setSalary(float salariu) {
-		this.salariu = salariu;
+	public void setTip(String tip) {
+		this.tip = tip;
+	}
+
+	public int getAniVechime() {
+		return aniVechime;
+	}
+
+	public void setAniVechime(int aniVechime) {
+		this.aniVechime = aniVechime;
+	}
+
+	public float salariu(){
+		if(tip.equalsIgnoreCase("rezident")){
+			salariu=2500;
+		}
+		else if(tip.equalsIgnoreCase("specialist")){
+			salariu=4000;
+		}
+		else if(tip.equalsIgnoreCase("primar")){
+			salariu=5500;
+		}
+		return salariu;
+	}
+	
+	public float maresteSalariulDupaVechime(){
+		if(aniVechime>=20 && tip.equalsIgnoreCase("primar")){
+			salariu=salariu+1500;
+		}else if(aniVechime>=20 && tip.equalsIgnoreCase("specialist")){
+			salariu=salariu+1300;
+		}else if(aniVechime>10 && aniVechime<20 && tip.equalsIgnoreCase("primar")){
+			salariu=salariu+1300;
+		}else if(aniVechime>10 && aniVechime<20 && tip.equalsIgnoreCase("specialist")){
+			salariu=salariu+1100;
+		}
+		return salariu;
 	}
 
 	@Override

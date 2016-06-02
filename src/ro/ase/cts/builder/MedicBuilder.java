@@ -25,11 +25,21 @@ public class MedicBuilder implements IMedic{
 		return this;
 	}
 	
-	public MedicBuilder salariu(float salariu){
-		medic.setSalary(salariu);
+//	public MedicBuilder salariu(float salariu){
+//		medic.setSalary(salariu);
+//		return this;
+//	}
+
+	public MedicBuilder tip(String tip){
+		medic.setTip(tip);
 		return this;
 	}
-
+	
+	public MedicBuilder aniVechime(int aniVechime){
+		medic.setAniVechime(aniVechime);
+		return this;
+	}
+	
 	@Override
 	public Medic build() {
 		return medic;

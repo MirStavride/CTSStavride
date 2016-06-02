@@ -2,6 +2,7 @@ package ro.ase.cts.observer;
 
 import java.util.ArrayList;
 
+import ro.ase.cts.builder.Pacient;
 import ro.ase.cts.decorator.AnalizaSuplimentara;
 import ro.ase.cts.decorator.IAnaliza;
 
@@ -12,9 +13,15 @@ public class Analiza extends AnalizaSuplimentara implements IAnaliza{
 	private float cost;
 	private ArrayList<Observer> listaObservatori=new ArrayList<Observer>();
 	private String stare;
+	//private	Pacient pacient;
 	
 	public Analiza(){
 		
+	}
+	
+	public Analiza(String denumire,String tip){
+		this.denumire=denumire;
+		this.tip=tip;
 	}
 
 	public Analiza(String denumire,String tip,String analizaSuplimentara) throws Exception{
@@ -29,13 +36,42 @@ public class Analiza extends AnalizaSuplimentara implements IAnaliza{
 		this.analizeSuplimentare=analizaSuplimentara;
 
 		if(tip.equals("normala")){ 
-			this.cost = 55;
+			this.cost = 50;
 		}
 			
 		else if(tip.equals("speciala")){
 			
 			this.cost = 100;
 		}
+	}
+	
+	public float getPretRedus(Pacient pacient){
+		if(pacient.getVarstaDinCNP()<18){
+			cost=cost-0.5f*cost;
+		}
+		else if(pacient.getVarstaDinCNP()>=18){
+			cost=cost;
+		}
+		return cost;
+	}
+	
+	public boolean verificaStare(){
+		if(stare.equalsIgnoreCase("sosite")){
+			return true;
+		}
+		return false;
+	}
+	
+	public float determinaCost(){
+		if(tip.equals("normala")){ 
+			cost = 50;
+		}
+			
+		else if(tip.equals("speciala")){
+			
+			cost = 100;
+		}
+		return cost;
 	}
 		
 	public String getStare() {
